@@ -16,6 +16,16 @@ async def help_command(update:Update,context:ContextTypes.DEFAULT_TYPE):
 async def custom_command(update:Update,context:ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("This is a custom command")
 
+def handle_response(text:str)-> str:
+    processed:str=text.lower()
+    if 'hello' in processed:
+        return "Hey there"
+    if 'how are you' in processed:
+        return "I am good!"
+    if 'i love python' in processed:
+        return "Remember to subscribe!"
+    return 'I do not understand what you wrote....'
+
 
 
 
